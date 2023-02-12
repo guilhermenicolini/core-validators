@@ -1,6 +1,6 @@
 {
   "name": "@guilhermenicolini/core-validators",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This project maintains all data validations",
   "main": "./dist/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "check-update": "ncu --color --interactive",
     "check": "npm run check-update && npm i",
     "build": "tsc -p tsconfig-build.json",
-    "deploy": "npm run build && npm publish",
+    "deploy": "npm run build && npm publish --access public",
     "undeploy": "npm unpublish --force"
   },
   "repository": {
@@ -26,26 +26,26 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^29.2.3",
-    "@types/node": "^18.11.9",
-    "@types/validator": "^13.7.10",
-    "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "eslint": "^8.27.0",
-    "eslint-config-standard-with-typescript": "^23.0.0",
-    "eslint-plugin-import": "^2.26.0",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.13.0",
+    "@types/validator": "^13.7.12",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "eslint": "^8.34.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
-    "git-commit-msg-linter": "^4.2.1",
-    "husky": "^8.0.2",
-    "jest": "^29.3.1",
+    "git-commit-msg-linter": "^4.6.0",
+    "husky": "^8.0.3",
+    "jest": "^29.4.2",
     "jest-mock-extended": "^3.0.1",
-    "lint-staged": "^13.0.3",
-    "npm-check-updates": "^16.4.1",
-    "ts-jest": "^29.0.3",
+    "lint-staged": "^13.1.1",
+    "npm-check-updates": "^16.7.4",
+    "ts-jest": "^29.0.5",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^4.8.4"
+    "typescript": "^4.9.5"
   },
   "dependencies": {
-    "validator": "^13.7.0"
+    "validator": "^13.9.0"
   }
 }
