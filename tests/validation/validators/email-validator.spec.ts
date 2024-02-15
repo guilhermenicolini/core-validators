@@ -1,4 +1,3 @@
-
 import { InvalidFieldError } from '@/validation/errors'
 import { EmailValidator } from '@/validation/validators'
 

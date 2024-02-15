@@ -1,4 +1,3 @@
-
 import { InvalidFieldError } from '@/validation/errors'
 import { MinLengthValidator } from '@/validation/validators'
 

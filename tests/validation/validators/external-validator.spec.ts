@@ -1,4 +1,3 @@
-
 import { InvalidFieldError } from '@/validation/errors'
 import { ExternalValidator } from '@/validation/validators'
 import { Validation } from '@/validation/protocols'
