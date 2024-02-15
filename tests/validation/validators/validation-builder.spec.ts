@@ -10,7 +10,8 @@ import {
   MinLengthValidator,
   RegexValidator,
   EmailValidator,
-  SameAsValidator
+  SameAsValidator,
+  PasswordValidator
 } from '@/validation/validators'
 import { Validation } from '@/validation/protocols'
 import { mock } from 'jest-mock-extended'
@@ -136,5 +137,14 @@ describe('ValidationBuilder', () => {
       .build()
 
     expect(validators).toEqual([new SameAsValidator('any_field', 'any_value', 'another_value')])
+  })
+
+  test('Should return PasswordValidator', () => {
+    const validators = ValidationBuilder
+      .of({ fieldName: 'any_field', value: 'any_value' })
+      .password({ min: 12, lowercase: false, uppercase: false, numeric: false })
+      .build()
+
+    expect(validators).toEqual([new PasswordValidator('any_field', 'any_value', { min: 12, lowercase: false, uppercase: false, numeric: false })])
   })
 })

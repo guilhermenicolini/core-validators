@@ -9,7 +9,8 @@ import {
   MinLengthValidator,
   RegexValidator,
   EmailValidator,
-  SameAsValidator
+  SameAsValidator,
+  PasswordValidator
 } from '.'
 import { Validation, Validator } from '../protocols'
 
@@ -74,8 +75,13 @@ export class ValidationBuilder {
     return this
   }
 
-  sameAs (valueToCompanre: string): ValidationBuilder {
-    this.validators.push(new SameAsValidator(this.fieldName, this.value, valueToCompanre))
+  sameAs (valueToCompare: string): ValidationBuilder {
+    this.validators.push(new SameAsValidator(this.fieldName, this.value, valueToCompare))
+    return this
+  }
+
+  password (options?: { min?: number, lowercase?: boolean, uppercase?: boolean, numeric?: boolean }): ValidationBuilder {
+    this.validators.push(new PasswordValidator(this.fieldName, this.value, options))
     return this
   }
 

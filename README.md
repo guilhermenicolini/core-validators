@@ -171,6 +171,19 @@ Validate using an external validation
   Builder.of('value', '123').external(new MobileValidation()).build()
 ```
 
+> ##### Password (PasswordValidator)
+Validate if value is password
+  ```
+  import { ValidationBuilder as Builder } from '@guilhermenicolini/core-validators'
+
+  Builder.of('value', '123').password().build()
+```
+Options:
+- min: minimal value length, default is 8
+- lowercase: at least one lowercase character, default is true
+- uppercase: at least one uppercase character, default is true
+- numeric: at least one numeric character, default is true
+
 #### Available Validations
 
 > ##### MobileValidation
