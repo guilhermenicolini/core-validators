@@ -1,4 +1,7 @@
 export * from './array-validator'
+export * from './cnpj-validator'
+export * from './cpf-cnpj-validator'
+export * from './cpf-validator'
 export * from './email-validator'
 export * from './enum-validator'
 export * from './external-validator'

@@ -11,7 +11,10 @@ import {
   RegexValidator,
   EmailValidator,
   SameAsValidator,
-  PasswordValidator
+  PasswordValidator,
+  CpfValidator,
+  CnpjValidator,
+  CpfCnpjValidator
 } from '@/validation/validators'
 import { Validation } from '@/validation/protocols'
 import { mock } from 'jest-mock-extended'
@@ -146,5 +149,32 @@ describe('ValidationBuilder', () => {
       .build()
 
     expect(validators).toEqual([new PasswordValidator('any_field', 'any_value', { min: 12, lowercase: false, uppercase: false, numeric: false })])
+  })
+
+  test('Should return CpfValidator', () => {
+    const validators = ValidationBuilder
+      .of({ fieldName: 'any_field', value: 'any_value' })
+      .cpf()
+      .build()
+
+    expect(validators).toEqual([new CpfValidator('any_field', 'any_value')])
+  })
+
+  test('Should return CnpjValidator', () => {
+    const validators = ValidationBuilder
+      .of({ fieldName: 'any_field', value: 'any_value' })
+      .cnpj()
+      .build()
+
+    expect(validators).toEqual([new CnpjValidator('any_field', 'any_value')])
+  })
+
+  test('Should return CpfCnpjValidator', () => {
+    const validators = ValidationBuilder
+      .of({ fieldName: 'any_field', value: 'any_value' })
+      .cpfcnpj()
+      .build()
+
+    expect(validators).toEqual([new CpfCnpjValidator('any_field', 'any_value')])
   })
 })

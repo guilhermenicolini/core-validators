@@ -10,7 +10,10 @@ import {
   RegexValidator,
   EmailValidator,
   SameAsValidator,
-  PasswordValidator
+  PasswordValidator,
+  CpfValidator,
+  CnpjValidator,
+  CpfCnpjValidator
 } from '.'
 import { Validation, Validator } from '../protocols'
 
@@ -82,6 +85,21 @@ export class ValidationBuilder {
 
   password (options?: { min?: number, lowercase?: boolean, uppercase?: boolean, numeric?: boolean }): ValidationBuilder {
     this.validators.push(new PasswordValidator(this.fieldName, this.value, options))
+    return this
+  }
+
+  cpf (): ValidationBuilder {
+    this.validators.push(new CpfValidator(this.fieldName, this.value))
+    return this
+  }
+
+  cnpj (): ValidationBuilder {
+    this.validators.push(new CnpjValidator(this.fieldName, this.value))
+    return this
+  }
+
+  cpfcnpj (): ValidationBuilder {
+    this.validators.push(new CpfCnpjValidator(this.fieldName, this.value))
     return this
   }
 

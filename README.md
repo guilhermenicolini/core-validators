@@ -184,6 +184,30 @@ Options:
 - uppercase: at least one uppercase character, default is true
 - numeric: at least one numeric character, default is true
 
+> ##### Cpf (CpfValidator)
+Validate if value is CPF
+  ```
+  import { ValidationBuilder as Builder } from '@guilhermenicolini/core-validators'
+
+  Builder.of('value', '123').cpf().build()
+```
+
+> ##### Cnpj (CnpjValidator)
+Validate if value is CNPJ
+  ```
+  import { ValidationBuilder as Builder } from '@guilhermenicolini/core-validators'
+
+  Builder.of('value', '123').cnpj().build()
+```
+
+> ##### CpfCnpj (CpfCnpjValidator)
+Validate if value is CPF or CNPJ
+  ```
+  import { ValidationBuilder as Builder } from '@guilhermenicolini/core-validators'
+
+  Builder.of('value', '123').cpfcnpj().build()
+```
+
 #### Available Validations
 
 > ##### MobileValidation
