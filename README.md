@@ -131,12 +131,22 @@ Validate if value is a number type
   Builder.of('value', 123).number().build()
 ```
 
+> ##### Max (MaxLengthValidator)
+Validate if value has a max length
+  ```
+  import { ValidationBuilder as Builder } from '@guilhermenicolini/core-validators'
+
+  Builder.of('value', 'text').max(8).build()
+  Builder.of('value', 123).max(100).build()
+
+```
 > ##### Min (MinLengthValidator)
 Validate if value has a min length
   ```
   import { ValidationBuilder as Builder } from '@guilhermenicolini/core-validators'
 
-  Builder.of('value', '123').min(8).build()
+  Builder.of('value', 'text').min(8).build()
+  Builder.of('value', 123).min(100).build()
 ```
 
 > ##### Regex (RegexValidator)
