@@ -1,5 +1,8 @@
 import {
   ArrayValidator,
+  CnpjValidator,
+  CpfCnpjValidator,
+  CpfValidator,
   EmailValidator,
   EnumValidator,
   ExternalValidator,
@@ -27,6 +30,9 @@ import {
 
 export {
   ArrayValidator,
+  CnpjValidator,
+  CpfCnpjValidator,
+  CpfValidator,
   EmailValidator,
   EnumValidator,
   ExternalValidator,
