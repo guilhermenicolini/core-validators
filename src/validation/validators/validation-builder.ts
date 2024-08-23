@@ -6,6 +6,7 @@ import {
   ExternalValidator,
   ArrayValidator,
   NumberValidator,
+  MaxLengthValidator,
   MinLengthValidator,
   RegexValidator,
   EmailValidator,
@@ -60,6 +61,11 @@ export class ValidationBuilder {
 
   number (): ValidationBuilder {
     this.validators.push(new NumberValidator(this.fieldName, this.value))
+    return this
+  }
+
+  max (max: number = Infinity): ValidationBuilder {
+    this.validators.push(new MaxLengthValidator(this.fieldName, this.value, max))
     return this
   }
 

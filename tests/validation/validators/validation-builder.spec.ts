@@ -14,7 +14,8 @@ import {
   PasswordValidator,
   CpfValidator,
   CnpjValidator,
-  CpfCnpjValidator
+  CpfCnpjValidator,
+  MaxLengthValidator
 } from '@/validation/validators'
 import { Validation } from '@/validation/protocols'
 import { mock } from 'jest-mock-extended'
@@ -95,6 +96,15 @@ describe('ValidationBuilder', () => {
       .build()
 
     expect(validators).toEqual([new NumberValidator('any_field', 'any_value')])
+  })
+
+  test('Should return MaxLengthValidator', () => {
+    const validators = ValidationBuilder
+      .of({ fieldName: 'any_field', value: 'any_value' })
+      .max(3)
+      .build()
+
+    expect(validators).toEqual([new MaxLengthValidator('any_field', 'any_value', 3)])
   })
 
   test('Should return MinLengthValidator', () => {
